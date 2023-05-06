@@ -6,7 +6,7 @@ Notes:
 
 ## 1. Introduction
 ### 1.1. Create Github repo in browser version
-### 1.2. Create folder 'Git' 
+### 1.2. Create folder 'Git' on PC. 
 ### 1.3. Go to that folder and clone repo there (using Git Bash):
 ```
 Admin@DESKTOP-V6V9F0T MINGW64 /d/Testing_Course/New folder/Git
