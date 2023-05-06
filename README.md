@@ -1,1 +1,1 @@
-# Client-server-architecture
+# Smth
