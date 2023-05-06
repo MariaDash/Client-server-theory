@@ -1467,4 +1467,80 @@ Admin@DESKTOP-V6V9F0T MINGW64 /d/Testing_Course/New folder/Git/Git_Additional (s
 $
 
 ```
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+ 
+@MariaDash 
+ida-que
+/
+Git_init
+Public
+Fork your own copy of ida-que/Git_init
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security
+Insights
+Beta Try the new code view
+Git_init/README.md
+@ida-que
+ida-que updating readme - rename 1 repo
+Latest commit 1a4c410 5 days ago
+ History
+ 1 contributor
+54 lines (51 sloc)  2.24 KB
+ 
 
+##  git init
+
+
+#### 1. Create a local repository _GIT_init_.
+To make a local repo, I just use `git init` command 
+```
+$ git init
+Initialized empty Git repository in D:/career/My courses/QA/GIT/First_Autotest/.git/
+```
+Now, we have add the file to make an initial (root) commit on _(master)_ branch:
+```
+$ git add .
+```
+Initial commit:
+```
+$ git commit -m "initial commit"
+[master (root-commit) afcc9f0] initial commit
+ 1 file changed, 41 insertions(+)
+ create mode 100644 Capitalcom_glossary_imgsrc.py
+```
+We have to create a `main` branch:
+```
+$ git branch -M main
+```
+And then we are automatically checked out at the `main` branch.
+#### 2. Create a remote repository _First_ at GitHub.
+To make this step, I go to my GitHub account, then go to the _"Repositories"_ tab and click on _"New"_ button.</br>
+After this, I needed an HTML link to this remote repo to connect it with my local repo in the very next step.
+#### 3. Connect and synchronize these local and remote repositories.
+To connect to the remote repo, I have a link to it. I can come back to terminal with a previously prepared initial commit.
+```
+$ git remote add origin https://github.com/MariaDash/First.git
+```
+The last thing is pushing that commit we created:
+```
+$ git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 761 bytes | 761.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/MariaDash/First.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+```
