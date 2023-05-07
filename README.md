@@ -3,7 +3,7 @@
 Notes:
 * `git remote -v`  - Current remote repo,
 * `git remote set-url origin https://github.com/MariaDash/XML_GIT.git`   - change remote repo to linked repo
-
+* `git rm --cached filename` - make tracked file to be untracked
 ## 1. Introduction
 ### 1.1. Create Github repo in browser version
 ### 1.2. Create folder 'Git' on PC. 
