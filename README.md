@@ -1113,6 +1113,7 @@ Admin@DESKTOP-V6V9F0T MINGW64 /d/Testing_Course/New folder/Git/Git_Additional (m
 $
 
 ```
+At this moment someone created a file "Conflict branch" on the branch "second_branch" on the  remote repo.
 Do `git push`
 ```
 Admin@DESKTOP-V6V9F0T MINGW64 /d/Testing_Course/New folder/Git/Git_Additional (main)
