@@ -1471,36 +1471,7 @@ Admin@DESKTOP-V6V9F0T MINGW64 /d/Testing_Course/New folder/Git/Git_Additional (s
 $
 
 ```
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Codespaces
-Marketplace
-Explore
- 
-@MariaDash 
-ida-que
-/
-Git_init
-Public
-Fork your own copy of ida-que/Git_init
-Code
-Issues
-Pull requests
-Actions
-Projects
-Security
-Insights
-Beta Try the new code view
-Git_init/README.md
-@ida-que
-ida-que updating readme - rename 1 repo
-Latest commit 1a4c410 5 days ago
- History
- 1 contributor
-54 lines (51 sloc)  2.24 KB
- 
+
 
 ##  git init
 
