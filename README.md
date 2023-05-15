@@ -1218,6 +1218,7 @@ Fast-forward
 Admin@DESKTOP-V6V9F0T MINGW64 /d/Testing_Course/New folder/Git/Git_Additional (main)
 $
 ```
+On a current moment someone changes this file on the remote repo.
 Commands `git push` , `git pull` not working:
 ```
 Admin@DESKTOP-V6V9F0T MINGW64 /d/Testing_Course/New folder/Git/Git_Additional (main)
