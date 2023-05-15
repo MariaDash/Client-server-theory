@@ -1425,7 +1425,7 @@ Admin@DESKTOP-V6V9F0T MINGW64 /d/Testing_Course/New folder/Git/Git_Additional (f
 $
 
 ```
-Deleting branches from local repo:
+## 5.3. Deleting branches from local repo:
 ```
 Admin@DESKTOP-V6V9F0T MINGW64 /d/Testing_Course/New folder/Git/Git_Additional (first_name)
 $ git branch -d second_branch
