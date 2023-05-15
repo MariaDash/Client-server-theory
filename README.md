@@ -561,7 +561,7 @@ $
 ```
  2) If we changed a file in the local repo and on the remote repo it is also changes but in another way then there is no option to `git push` from local to remote repo and we also cannot do `git pull`. So what we do: we open the file on the local PC and delete all the mess ( smth with `>>>>>` and `===`) and left only what we need), then do `git add`, `git commit` and `git push`. After that we can check that the files in both repos are equal.
  
- Precondition: changing in the File1.txt on remote repo first line to 'untesting line' . Changing in the File1.txt on remote repo first line to 'testing line'.
+ Precondition: changing in the File1.txt on remote repo first line to 'untesting line' . Changing in the File1.txt on local repo first line to 'testing line'.
 Check the status:
 ```
 Admin@DESKTOP-V6V9F0T MINGW64 /d/Testing_Course/New folder/Git/Git_Additional (main)
