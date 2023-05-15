@@ -1480,7 +1480,7 @@ $
 To make a local repo, I just use `git init` command 
 ```
 $ git init
-Initialized empty Git repository in D:/career/My courses/QA/GIT/First_Autotest/.git/
+Initialized empty Git repository in /d/Testing_Course/New folder/Git/.git
 ```
 Now, we have add the file to make an initial (root) commit on _(master)_ branch:
 ```
@@ -1500,7 +1500,7 @@ $ git branch -M main
 And then we are automatically checked out at the `main` branch.
 #### 2. Create a remote repository _First_ at GitHub.
 To make this step, I go to my GitHub account, then go to the _"Repositories"_ tab and click on _"New"_ button.</br>
-After this, I needed an HTML link to this remote repo to connect it with my local repo in the very next step.
+After this, I needed a link to this remote repo to connect it with my local repo in the very next step.
 #### 3. Connect and synchronize these local and remote repositories.
 To connect to the remote repo, I have a link to it. I can come back to terminal with a previously prepared initial commit.
 ```
