@@ -1473,7 +1473,7 @@ $
 ```
 
 
-##  git init
+## 6. git init
 
 
 ####  Create a local repository _GIT_init_.
@@ -1519,3 +1519,102 @@ To https://github.com/MariaDash/First.git
  * [new branch]      main -> main
 branch 'main' set up to track 'origin/main'.
 ```
+## 7. .gitignore file
+I don't know of any project that doesn't have files in its working directory that shouldn't be ignored. Often, you have a group of files that you not only do not want to automatically add to the repository, but also see in the untracked lists (and the older the project, the more such files can be). Such files usually include automatically generated files (various logs, program build results, etc.).
+
+In such a case, you can create a .gitignore file listing the patterns corresponding to such files. It's good practice to set up the .gitignore file before you start working seriously, this will protect you from accidentally adding files to the repository that you don't want to see there.
+
+Here is an example of a .gitignore file for a typical Rails application (the example is taken from github and is the de facto standard for most repositories with Ruby on Rails projects):
+```
+cat .gitignore
+
+*.rbc
+capybara-*.html
+.rspec
+/log
+/tmp
+/db/*.sqlite3
+/public/system
+/coverage/
+/spec/tmp
+**.orig
+rerun.txt
+pickle-email-*.html
+
+# TODO Comment out these rules if you are OK with secrets being uploaded to the repo
+config/initializers/secret_token.rb
+config/secrets.yml
+
+## Environment normalisation:
+/.bundle
+/vendor/bundle
+
+# these should all be checked in to normalise the environment:
+# Gemfile.lock, .ruby-version, .ruby-gemset
+
+# unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
+.rvmrc
+```
+Let's take a closer look at this file: The first line says to ignore all files that end in .rbc, the fourth says to ignore the log directory, the sixth says all sqlite3 database configuration files. You can immediately see that some patterns are used for most of the rules. But you can also specify the full path to a specific file, as done in lines 14 and 15. Git always gently enforces these rules. If you specify to ignore just the string test, then it will ignore both directories (including nested files) and files called test, regardless of where they are located. If you want to limit yourself to only the root level in the repository, you must explicitly indicate this by putting a “/” in front of the pattern.
+
+The following rules apply to patterns in the .gitignore file:
+
+Blank lines and lines starting with # are ignored.
+You can use standard glob patterns.
+You can end the pattern with a slash character (/) to indicate a directory.
+You can invert the pattern by using an exclamation mark (!) as the first character.
+Glob patterns are simplified regular expressions used by shells. The * character matches 0 or more characters; the sequence [abc] - any character from those specified in brackets (in this example, a, b or c); a question mark (?) matches a single character; [0-9] matches any character in the range (in this case, 0 to 9). Here is another example of a .gitignore file:
+```
+# comment - this line is ignored
+# do not process files whose name ends with .a
+*.a
+# BUT keep track of the lib.a file, even though we ignore all .a files with the previous rule
+!lib.a
+# ignore only the TODO file located in the root directory, does not apply to subdir/TODO files
+/TODO
+# ignore all files in the build/ directory
+build/
+# ignore doc/notes.txt but not doc/server/arch.txt
+doc/*.txt
+# ignore all .txt files in the doc/ directory
+doc/**/*.txt
+The **/ pattern has been available in Git since version 1.8.2.
+```
+You can temporarily ignore changes to a file with the command:
+
+`git update-index --assume-unchanged <file>`
+
+Disabled with the command:
+
+`git update-index --no-assume-unchanged <file>`
+
+If the file is in the index and you need to remove it from the index:
+
+`git rm --cached path/to/file`
+However, you should be careful with the git rm command.
+
+It is worth noting that the .gitignore file is not the solution to all problems, it is not always worth using it. Sometimes there is something in the .gitignore file that shouldn't be there. Let's imagine this situation: Two developers work in the same team on the same project. One developer is using vim and the other is using JetBrains IDE. For the first one, temporary files are created in a special directory in the user profile, thus no temporary files are created in the project directory when editing the project. For the second developer, the .idea directory is created in the project, in which the IDE configs for this project are located. This is part of someone else's working environment and does not relate to the project and repository in any way. In theory, you can add the /.idea line to the .gitignore file in the project. But there is one difficulty: if several people work on the project and everyone adds their environment configs to .gitignore, then chaos begins in the file.
+
+What to do and how to be? There are several different ways to ignore files in git.
+
+Project Exceptions
+
+This is exactly the same .gitignore, at the root of the repository. It should be placed in it basically only what has a direct bearing on the project and its architecture. For example, all project participants have a directory with locks, or all of them create temporary files in the same place. If these rules apply to all project participants, then it is worth placing the ignore rules in .gitignore, which will be distributed along with the repository.
+
+Computer exception
+When you have multiple projects and something is being created all over the place that you don't want to commit (like Vim *.swp files) use ~/.gitconfig. The above example of the .idea folder that is created for each project fits right in here. Create a .gitexcludes file and run:
+
+`git config --global core.excludesfile ~/.gitexcludes`
+or manually add to `~/.gitconfig`:
+```
+[core]
+   excludesfile=~/.gitexcludes
+```
+Repository Exception
+
+Sometimes there are cases when you have files that are specific to this project and your working environment (for example, the logs of a third-party utility that you like to use and use only in this project). To attribute the ignoring pattern to the project is not true. You do not use it in all projects, and therefore ignore it globally on the entire computer - it is also not worth it. In this case, use .git/info/exclude. This file is not committed and remains only in the local repository.
+
+Immediately after saving ` ~/.gitconfig`, you should not see the specified files/folders in the Untracked files list.
+
+I draw your attention to the fact that in the first case we edit the .git/info/exclude file (without s at the end), and in the second we use the excludeSfile option (c s in the middle). Don't waste your time on a possible typo.
+P.S. thanks for the original info to : https://ru.hexlet.io/courses/git_base/lessons/git_gitignore/theory_unit
