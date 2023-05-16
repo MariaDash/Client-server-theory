@@ -1617,4 +1617,5 @@ Sometimes there are cases when you have files that are specific to this project 
 Immediately after saving ` ~/.gitconfig`, you should not see the specified files/folders in the Untracked files list.
 
 I draw your attention to the fact that in the first case we edit the .git/info/exclude file (without s at the end), and in the second we use the excludeSfile option (c s in the middle). Don't waste your time on a possible typo.
+
 P.S. thanks for the original info to : https://ru.hexlet.io/courses/git_base/lessons/git_gitignore/theory_unit
