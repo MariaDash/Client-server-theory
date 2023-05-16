@@ -1476,7 +1476,7 @@ $
 ##  git init
 
 
-#### 1. Create a local repository _GIT_init_.
+####  Create a local repository _GIT_init_.
 To make a local repo, I just use `git init` command 
 ```
 $ git init
