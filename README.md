@@ -1619,3 +1619,12 @@ Immediately after saving ` ~/.gitconfig`, you should not see the specified files
 I draw your attention to the fact that in the first case we edit the .git/info/exclude file (without s at the end), and in the second we use the excludeSfile option (c s in the middle). Don't waste your time on a possible typo.
 
 P.S. thanks for the original info to : https://ru.hexlet.io/courses/git_base/lessons/git_gitignore/theory_unit
+
+## 8. git rebase
+Rebasing is the process of moving or combining a sequence of commits to a new base commit. Rebasing is most useful and easily visualized in the context of a feature branching workflow. The general process can be visualized as the following:
+
+![rebase](https://github.com/MariaDash/Git_Additional/blob/main/Git_rebase1.PNG)
+
+From a content perspective, rebasing is changing the base of your branch from one commit to another making it appear as if you'd created your branch from a different commit. Internally, Git accomplishes this by creating new commits and applying them to the specified base. It's very important to understand that even though the branch looks the same, it's composed of entirely new commits.
+`git rebase <base>`
+for more see: https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase
