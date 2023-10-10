@@ -6,6 +6,8 @@ Notes:
 * `git rm --cached filename` - make tracked file to be untracked
 * `git ls-remote <remote>` full list of remote branches
 * `git remote show <remote>`  - Full kist of remote branches and additional info.
+### Git rebase:
+![Git rebase](https://github.com/MariaDash/Git_Additional/blob/main/Git_rebase1.PNG)
 ## 1. Introduction
 ### 1.1. Create Github repo in browser version
 ### 1.2. Create folder 'Git' on PC. 
